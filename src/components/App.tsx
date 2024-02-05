@@ -12,8 +12,8 @@ import { Container } from "../styled/Container.styled";
 function App() {
   return (
     <>
+      <Header />
       <Container>
-        <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="*" element={<NotFoundPage />} />

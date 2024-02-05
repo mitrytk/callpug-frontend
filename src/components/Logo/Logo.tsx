@@ -1,29 +1,16 @@
-import { LogoSvg, LogoContainer } from "./Logo.styled"
+import { LogoSvg, LogoContainer, LogoImg, TextLogo } from "./Logo.styled";
 
 interface LogoProps {
-    size?: string;
+  size?: string;
 }
 
 export const Logo: React.FC<LogoProps> = (props) => {
-function size() {
-    switch (props.size) {
-        case 'small':
-            return '100px'
-        
-        case 'middle':
-            return '160px'
-
-        case 'big':
-            return '200px'
-    
-        default:
-            return '160px'
-            
-    }
-} ; 
-    return (
-        <LogoContainer size={size()}>
-            <LogoSvg />
-        </LogoContainer>
-    )
-}
+  return (
+    <LogoContainer>
+      <TextLogo>Call</TextLogo>
+      <LogoImg>
+        <LogoSvg />
+      </LogoImg>
+    </LogoContainer>
+  );
+};

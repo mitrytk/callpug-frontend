@@ -5,10 +5,7 @@ interface BurgerLineProps {
 }
 
 export const BurgerBtn = styled.button`
-  position: absolute;
-
-  top: 20px;
-  right: 20px;
+  pointer-events: auto;
 
   display: flex;
   align-items: center;
@@ -17,25 +14,37 @@ export const BurgerBtn = styled.button`
   width: 40px;
   height: 40px;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     display: none;
   }
+`;
+
+export const BurgerContainer = styled.div`
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50%;
+  height: 40%;
 `;
 
 export const BurgerLine = styled.div<BurgerLineProps>`
   display: block;
   width: 100%;
-  height: 5px;
+  height: 2px;
   background-color: red;
-  border-radius: 2px;
+  border-radius: 1px;
 
   transition: 0.3s;
 
-  ${props =>
-    !props.closed ? css``:
-    css`
-      width: 0%;
-    `}
+  ${(props) =>
+    !props.closed
+      ? css``
+      : css`
+          width: 0%;
+        `}
 
   &::before {
     content: "";
@@ -47,17 +56,18 @@ export const BurgerLine = styled.div<BurgerLineProps>`
 
     background-color: red;
     width: 100%;
-    height: 5px;
-    border-radius: 2px;
+    height: 2px;
+    border-radius: 1px;
 
     transition: 0.3s;
 
-    ${props =>
-      !props.closed ? css``:
-      css`
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg) scaleX(1.2);
-      `}
+    ${(props) =>
+      !props.closed
+        ? css``
+        : css`
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg) scaleX(1.2);
+          `}
   }
 
   &::after {
@@ -70,16 +80,17 @@ export const BurgerLine = styled.div<BurgerLineProps>`
 
     background-color: red;
     width: 100%;
-    height: 5px;
-    border-radius: 2px;
+    height: 2px;
+    border-radius: 1px;
 
     transition: 0.3s;
 
-    ${props =>
-      !props.closed ? css``:
-      css`
-        bottom: 50%;
-        transform: translateY(50%) rotate(-45deg) scaleX(1.2);
-      `}
+    ${(props) =>
+      !props.closed
+        ? css``
+        : css`
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg) scaleX(1.2);
+          `}
   }
 `;
