@@ -6,6 +6,7 @@ interface BurgerLineProps {
 
 export const BurgerBtn = styled.button`
   pointer-events: auto;
+  z-index: 1001;
 
   display: flex;
   align-items: center;

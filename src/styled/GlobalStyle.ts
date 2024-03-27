@@ -8,6 +8,38 @@ import MontserratSemiBold from '../fonts/Montserrat/Montserrat-SemiBold.ttf';
 import PlayfairDisplayRegular from '../fonts/Playfair_Display/PlayfairDisplay-Regular.ttf';
 
 
+export const variables = {
+  colors: {
+    bgc: '#F8F8F8',
+    primary: '#3E85F3',
+    title: '#FF6347',
+    subtitle: '#2980b9',
+    text: '#333333',
+    btn: '#FF4D4D',
+    white: '#ffffff',
+    opacity: 'rgba(0,0,0,0)',
+  },
+
+  fonts: {
+    title: 'ExoBold',
+    subtitle: 'MontserratSemiBold',
+    text: 'NunitoRegular',
+    primaryText: 'PlayfairDisplayRegular',
+  },
+
+  transitions: {
+    standart: '300ms cubic-bezier(0.4, 0, 0.2, 1)',
+  },
+
+  shadow: { shadow: 'rgba(0, 0, 0, 0.15) 0px 15px 25px' },
+
+  breakpoints: {
+    mobile: '375px',
+    tablet: '768px',
+    desktop: '1440px',
+  },
+};
+
 export const GlobalStyle = createGlobalStyle`
 
 @font-face {
@@ -83,6 +115,7 @@ p {
 
 h1, h2, h3 {
   margin: 0px;
+  font-weight: normal;
 }
 
 ul,
@@ -113,5 +146,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input {
+  padding: 0;
+  margin: 0;
 }
 `;

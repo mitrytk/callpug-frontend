@@ -7,7 +7,11 @@ import { Logo } from "../Logo/Logo";
 import { BurgerMenuBtn } from "../BurgerMenuBtn/BurgerMenuBtn";
 import { LinkBtnCreate } from "./Header.styled";
 
-export const Header = () => {
+interface HeaderProps {
+  visible: boolean;
+}
+
+export const Header = ({visible}: HeaderProps) => {
   const [closed, setClosed] = useState<boolean>(false);
 
   function toggleMenu() {
@@ -31,7 +35,7 @@ export const Header = () => {
   }
 
   return (
-    <HeaderStyled>
+    <HeaderStyled id="header" visible={visible ? 1 : 0}>
       <Logo size="middle" />
       <Overlay onClick={onClickOverlay} closed={closed ? 1 : 0}>
         <MenuStyled closed={closed ? 1 : 0}>

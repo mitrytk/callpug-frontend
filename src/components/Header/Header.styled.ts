@@ -5,7 +5,11 @@ interface MenuProps {
   closed: number;
 }
 
-export const HeaderStyled = styled.div`
+interface HeaderProps {
+  visible: number;
+}
+
+export const HeaderStyled = styled.div<HeaderProps>`
   position: fixed;
 
   display: flex;
@@ -15,13 +19,26 @@ export const HeaderStyled = styled.div`
   width: 100%;
   padding: 20px;
 
+  background-color: #fff;
+
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s;
+
+  ${props => props.visible
+      ? css`
+        `
+      : css`
+          transform: translateY(-100%);
+        `
+  }
 `;
 
 export const Overlay = styled.div<MenuProps>`
   display: block;
   position: absolute;
+
 
   top: 0;
   left: 0;
@@ -47,7 +64,8 @@ export const Overlay = styled.div<MenuProps>`
 export const MenuStyled = styled.div<MenuProps>`
   @media screen and (max-width: 767.98px) {
     position: absolute;
-
+    
+    z-index: 1000;
     top: 0;
     right: 0;
 
@@ -56,7 +74,7 @@ export const MenuStyled = styled.div<MenuProps>`
 
     padding-top: 33px;
 
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
     width: 70%;
     height: 100vh;
 
@@ -89,7 +107,7 @@ export const NavigationStyled = styled.nav`
 
 export const NavLinkStyled = styled(NavLink)`
   margin-bottom: 20px;
-  font-family: 'NunitoRegular';
+  font-family: "NunitoRegular";
   font-size: 24px;
 `;
 
@@ -98,7 +116,7 @@ export const LinkBtnCreate = styled(Link)`
 
   background-color: #3498db;
   color: #ffffff;
-  font-family: 'ExoBold';
+  font-family: "ExoBold";
   font-size: 14px;
 
   border-radius: 8px;

@@ -1,3 +1,3 @@
 export const NotFoundPage = () => {
-    return (<div></div>)
+    return (<div>Извините, мы ничего не нашли</div>)
 } 
