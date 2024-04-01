@@ -12,6 +12,8 @@ interface HeaderProps {
 export const HeaderStyled = styled.div<HeaderProps>`
   position: fixed;
 
+  z-index: 10;
+
   display: flex;
   justify-content: space-between;
   align-items: center;

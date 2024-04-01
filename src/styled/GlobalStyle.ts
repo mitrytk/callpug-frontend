@@ -12,12 +12,16 @@ export const variables = {
   colors: {
     bgc: '#F8F8F8',
     primary: '#3E85F3',
+    red: '#CC0000',
+    green: '#5ecd95',
+    dark_green: '#0db561',
     title: '#FF6347',
     subtitle: '#2980b9',
     text: '#333333',
     btn: '#FF4D4D',
     white: '#ffffff',
     opacity: 'rgba(0,0,0,0)',
+    gray: '#AAADB8',
   },
 
   fonts: {

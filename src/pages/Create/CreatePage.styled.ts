@@ -17,13 +17,12 @@ export const Form = styled.form`
 `;
 
 export const Title = styled.h1`
-
-padding-left: 12px;
-margin-bottom: 20px;
+  padding-left: 12px;
+  margin-bottom: 20px;
   font-family: ${variables.fonts.title};
   font-size: 24px;
 
-  color: ${variables.colors.title};
+  color: ${variables.colors.red};
 `;
 
 export const Subtitle = styled.h2`
@@ -39,11 +38,13 @@ export const LabelRecipeName = styled.label`
 
 export const InputRecipeName = styled.input`
   width: 100%;
+  outline: none;
 
-  border: 0;
-  border-radius: 0;
-  border-bottom: 1px solid ${variables.colors.text};
+  border: 1px solid ${variables.colors.text};
+  border-radius: 4px;
 
+  padding: 6px 12px;
+  margin-top: 16px;
   margin-bottom: 24px;
 
   background-color: ${variables.colors.opacity};
@@ -53,10 +54,20 @@ export const InputRecipeName = styled.input`
 
   color: ${variables.colors.text};
   background-color: ${variables.colors.opacity};
+`;
+export const DescriptionTextarea = styled.textarea`
+  width: 100%;
+  min-height: 80px;
 
-  &&:focus {
-    border: none;
-  }
+  border: 1px solid ${variables.colors.text};
+  border-radius: 4px;
+  background-color: ${variables.colors.opacity};
+
+  resize: none;
+  outline: none;
+
+  padding: 6px 12px;
+  margin-bottom: 24px;
 `;
 
 export const ContainerStep = styled.div``;
@@ -65,5 +76,12 @@ export const AddStepButton = styled.button``;
 
 export const CreateButton = styled.button`
   padding: 3px 5px;
-  background-color: red;
+  background-color: ${variables.colors.green};
+  color: ${variables.colors.white};
+  border-radius: 4px;
+
+  font-family: ${variables.fonts.title};
+
+  padding: 4px 10px;
+  padding-bottom: 5px;
 `;

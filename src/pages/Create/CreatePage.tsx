@@ -7,26 +7,30 @@ import {
   LabelRecipeName,
   InputRecipeName,
   CreateButton,
+  DescriptionTextarea,
 } from "./CreatePage.styled";
 import { IngredientsI } from "../../components/Ingredients/Ingredients.types";
 
 
 import { Ingredients } from "../../components/Ingredients/Ingredients";
+import { CookingSteps } from "../../components/CookingStepsList/CookingSteps";
 
 interface FormData {
   recipename: string,
+  description: string,
   ingredients: IngredientsI[],
 }
 
 export const CreatePage = () => {
   const [formData, setFormData] = useState<FormData>({
     recipename: "",
+    description: "",
     ingredients: [],
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData(prevFormData => { return {...prevFormData, [name]: value }});
   };
 
   const handlerSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -51,8 +55,15 @@ export const CreatePage = () => {
             value={formData.recipename}
           />
         </LabelRecipeName>
+        <Subtitle>Описание</Subtitle>
+        <DescriptionTextarea
+            name="description"
+            onChange={handleChange}
+            value={formData.description}
+          />
         <Subtitle>Ингридиенты</Subtitle>
         <Ingredients handleChangeIngredientList={handleChangeIngredientList}/>
+        <CookingSteps />
         <CreateButton type="button" onClick={handlerSubmit}>
           Создать
         </CreateButton>
